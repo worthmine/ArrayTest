@@ -1,0 +1,10 @@
+ diff lib/ArrayTest.pm lib/ArrayTest2.pm 
+1c1
+< package ArrayTest;
+---
+> package ArrayTest2;
+16c16
+<     my @list = ( $self->zero(), @{ $self->num() } );
+---
+>     ( $self->zero(), @{ $self->num() } );
+
