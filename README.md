@@ -8,9 +8,9 @@ ArrayTest - perl CORE::scaler MAY have a bug
 
 # DESCRIPTION
 
-I wonder why does this test fail.
+I wonder why do these tests fail.
 
-## diff lib/ArrayTest.pm lib/ArrayTest2.pm is below
+## [diff lib/ArrayTest.pm lib/ArrayTest2.pm](https://github.com/worthmine/ArrayTest/blob/master/diff.txt) is below:
 ``` diff.txt
 1c1
 < package ArrayTest;
@@ -21,6 +21,11 @@ I wonder why does this test fail.
 ---
 >     ( $self->zero(), @{ $self->num() } );
 ```
+
+The joined value with ' ' is same,
+And trying to `note explain`  succeeded, I got 10 references.
+So there must be 10 references in what these return.
+But CORE::scalar() returns 9 with ArrayTest2.pm!
 
 # LICENSE
 
