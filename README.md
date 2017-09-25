@@ -4,7 +4,7 @@ ArrayTest - perl CORE::scaler MAY have a bug
 
 # SYNOPSIS
 
-`perl t/00_compile.t`  will never succeed. Why not?
+[`perl t/00_compile.t` ](https://github.com/worthmine/ArrayTest/blob/master/t/00_compile.t) will never succeed. Why not?
 
 # DESCRIPTION
 
