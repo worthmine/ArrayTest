@@ -1,5 +1,5 @@
 use strict;
-use Test::More 0.98 tests => 15;
+use Test::More 0.98 tests => 17;
 
 use lib 'lib';
 
@@ -52,6 +52,12 @@ my $y = scalar list();
 
 is $x, 0, "\$x is 0";                                                   #14
 is $y, 9, "\$y is 9, not 10!";                                          #15
+
+($x) = ( $zero, @$num );
+$y = scalar( $zero, @$num );
+
+is $x, 0, "\$x is 0";                                                   #16
+is $y, 9, "\$y is 9, not 10!";                                          #17
 
 done_testing;
 

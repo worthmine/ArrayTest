@@ -66,6 +66,15 @@ To tell the truth, Moose is irrelevant. To say simply,
 Under the above, by perl's specifications, $x is 0(the first value of the list)
 and $y is 9(counting @$num), NOT 10! This is contrary to intuition!
 
+And to say more simply, `sub{}` is also irrelevant.
+It's specification of `CORE::scalar`
+
+    my $zero = 0;
+    my $num = [1..9];
+
+    my ($x) = ( $zero, @$num );     # is 0
+    my $y = scalar( $zero, @$num ); # is 9
+
 ## how to avoid them
 
 Just use an Array, the Anonymous array or `map` like below:
