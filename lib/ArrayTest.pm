@@ -61,7 +61,7 @@ According to L<perldoc|http://perldoc.perl.org/perlop.html#Comma-Operator>,
  Comma Operator
 
  Binary "," is the comma operator. In scalar context it evaluates its left
- argument, throws that value away, then evaluates its right argument and\
+ argument, throws that value away, then evaluates its right argument and
  returns that value.
  This is just like C's comma operator. In list context, it's just the list
  argument separator, and inserts both its arguments into the list.
@@ -97,6 +97,9 @@ It's specification of C<CORE::scalar>
 
  my ($x) = ( $zero, @$num );     # is 0
  my $y = scalar( $zero, @$num ); # is 9
+
+I heard It's the specification affected from C.
+But I think B< it's almost bug>
 
 =head2 how to avoid them
 
