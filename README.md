@@ -65,10 +65,7 @@ Just use an Array or the Anonymous array like below:
 
 # SEE ALSO
 
--
-
-        L<Why do I get the last value in a list in scalar context in perl? - stackoverflow|https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0>
-
+- [Why do I get the last value in a list in scalar context in perl? - stackoverflow](https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0)
 - [Comma-Operator in perlop](http://perldoc.perl.org/perlop.html#Comma-Operator)
 
 # LICENSE
