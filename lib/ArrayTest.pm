@@ -74,6 +74,21 @@ namely, C<( $self-E<gt>zero(), @{ $self-E<gt>num() } )> and ifever, C<return ( $
 
 So they return only C<@{ $self-E<gt>num() }> B<in scalar context>
 
+To tell the truth, Moose is irrelevant. To say simply,
+
+ my $zero = 0;
+ my $num = [1..9];
+
+ sub list {
+    return( $zero, @$num );
+ }
+ 
+ my ($x) = list();
+ my $y = scalar list();
+
+Under the above, by perl's specifications, $x is 0(the first value of the list)
+and $y is 9(counting @$num), NOT 10! This is contrary to intuition!
+
 =head2 how to avoid them
 
 Just use an Array, the Anonymous array or C<map> like below:
@@ -106,7 +121,7 @@ L<Why do I get the last value in a list in scalar context in perl? - stackoverfl
 =item
 
 L<Comma-Operator in perlop|http://perldoc.perl.org/perlop.html#Comma-Operator>
-
+L<日本語の記事を作成しました|https://qiita.com/worthmine/items/a632d124516743950c21>
 =back
 
 =head1 LICENSE
