@@ -1,5 +1,5 @@
 use strict;
-use Test::More 0.98 tests => 13;
+use Test::More 0.98 tests => 15;
 
 use lib 'lib';
 
@@ -39,6 +39,19 @@ my $a4 = ArrayTest4->new();
 note join " ", $a4->list();
 is $a4->count(), 10, "succeed to count 0..9";                           #12
 is scalar $a4->list(), 10, "succeed to count 0..9";                     #13
+
+my $zero = 0;
+my $num = [1..9];
+
+sub list {
+    return( $zero, @$num );
+}
+
+my ($x) = list();
+my $y = scalar list();
+
+is $x, 0, "\$x is 0";                                                   #14
+is $y, 9, "\$y is 9, not 10!";                                          #15
 
 done_testing;
 
