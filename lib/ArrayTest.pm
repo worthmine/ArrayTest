@@ -67,12 +67,12 @@ According to L<perldoc|http://perldoc.perl.org/perlop.html#Comma-Operator>,
  argument separator, and inserts both its arguments into the list.
  These arguments are also evaluated from left to right.
 
-namely, C<( $self->zero(), @{ $self->num() } )< and ifever, C<return ( $self->zero(), @{ $self->num() } )> mean below:
+namely, C<( $self-E<gt>zero(), @{ $self-E<gt>num() } )> and ifever, C<return ( $self-E<gt>zero(), @{ $self-E<gt>num() } )> mean below:
 
  $self->zero();
  @{ $self->num() };
 
-So they return only C<@{ $self->num() }> B<in scalar context>
+So they return only C<@{ $self-E<gt>num() }> B<in scalar context>
 
 =head2 how to avoid them
 
@@ -86,7 +86,7 @@ Just use an Array or the Anonymous array like below:
 
 =item by using an Anonymous Array
 
- @{ $self->zero(), @{ $self->num() } };
+ @{ [ $self->zero(), @{ $self->num() } ] };
 
 =back
 
@@ -96,11 +96,12 @@ Just use an Array or the Anonymous array like below:
 
 =item
 
-L<stackoverflow|https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0>
+
+ L<Why do I get the last value in a list in scalar context in perl? - stackoverflow|https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0>
 
 =item
 
-L<perlop|http://perldoc.perl.org/perlop.html#Comma-Operator>
+L<Comma-Operator in perlop|http://perldoc.perl.org/perlop.html#Comma-Operator>
 
 =back
 

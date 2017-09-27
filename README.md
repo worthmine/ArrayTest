@@ -44,12 +44,12 @@ According to [perldoc](http://perldoc.perl.org/perlop.html#Comma-Operator),
     argument separator, and inserts both its arguments into the list.
     These arguments are also evaluated from left to right.
 
-namely, `( $self-`zero(), @{ $self->num() } )< and ifever, `return ( $self-`zero(), @{ $self->num() } )> mean below:
+namely, `( $self->zero(), @{ $self->num() } )` and ifever, `return ( $self->zero(), @{ $self->num() } )` mean below:
 
     $self->zero();
     @{ $self->num() };
 
-So they return only `@{ $self-`num() }> **in scalar context**
+So they return only `@{ $self->num() }` **in scalar context**
 
 ## how to avoid them
 
@@ -61,12 +61,15 @@ Just use an Array or the Anonymous array like below:
 
 - by using an Anonymous Array
 
-        @{ $self->zero(), @{ $self->num() } };
+        @{ [ $self->zero(), @{ $self->num() } ] };
 
 # SEE ALSO
 
-- [stackoverflow](https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0)
-- [perlop](http://perldoc.perl.org/perlop.html#Comma-Operator)
+-
+
+        L<Why do I get the last value in a list in scalar context in perl? - stackoverflow|https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0>
+
+- [Comma-Operator in perlop](http://perldoc.perl.org/perlop.html#Comma-Operator)
 
 # LICENSE
 
