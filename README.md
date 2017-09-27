@@ -53,7 +53,7 @@ So they return only `@{ $self->num() }` **in scalar context**
 
 ## how to avoid them
 
-Just use an Array or the Anonymous array like below:
+Just use an Array, the Anonymous array or `map` like below:
 
 - by using a named Array
 
