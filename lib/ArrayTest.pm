@@ -121,7 +121,9 @@ L<Why do I get the last value in a list in scalar context in perl? - stackoverfl
 =item
 
 L<Comma-Operator in perlop|http://perldoc.perl.org/perlop.html#Comma-Operator>
+
 L<日本語の記事を作成しました|https://qiita.com/worthmine/items/a632d124516743950c21>
+
 =back
 
 =head1 LICENSE

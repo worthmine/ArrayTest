@@ -86,8 +86,8 @@ Just use an Array, the Anonymous array or `map` like below:
 
 - [Why do I get the last value in a list in scalar context in perl? - stackoverflow](https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0)
 - [Comma-Operator in perlop](http://perldoc.perl.org/perlop.html#Comma-Operator)
-[日本語の記事を作成しました](https://qiita.com/worthmine/items/a632d124516743950c21)
-=back
+
+    [日本語の記事を作成しました](https://qiita.com/worthmine/items/a632d124516743950c21)
 
 # LICENSE
 
@@ -99,11 +99,3 @@ it under the same terms as Perl itself.
 # AUTHOR
 
 Yuki Yoshida(worthmine) <worthmine@gmail.com>
-
-# POD ERRORS
-
-Hey! **The above document had some coding errors, which are explained below:**
-
-- Around line 127:
-
-    You forgot a '=back' before '=head1'
