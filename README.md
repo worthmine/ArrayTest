@@ -76,7 +76,7 @@ It's specification of `CORE::scalar`
     my $y = scalar( $zero, @$num ); # is 9
 
 I heard It's the specification affected from C.
-But I think ** it's almost bug**
+But I think **it's almost bug**
 
 ## how to avoid them
 

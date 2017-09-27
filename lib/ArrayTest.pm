@@ -99,7 +99,7 @@ It's specification of C<CORE::scalar>
  my $y = scalar( $zero, @$num ); # is 9
 
 I heard It's the specification affected from C.
-But I think B< it's almost bug>
+But I think B<it's almost bug>
 
 =head2 how to avoid them
 
