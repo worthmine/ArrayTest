@@ -88,6 +88,10 @@ Just use an Array or the Anonymous array like below:
 
  @{ [ $self->zero(), @{ $self->num() } ] };
 
+=item by using C<map>
+
+ map {$_} $self->zero(), @{ $self->num() };
+
 =back
 
 =head1 SEE ALSO

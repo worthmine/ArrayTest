@@ -63,6 +63,10 @@ Just use an Array or the Anonymous array like below:
 
         @{ [ $self->zero(), @{ $self->num() } ] };
 
+- by using `map`
+
+        map {$_} $self->zero(), @{ $self->num() };
+
 # SEE ALSO
 
 - [Why do I get the last value in a list in scalar context in perl? - stackoverflow](https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0)
