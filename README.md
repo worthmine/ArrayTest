@@ -1,31 +1,72 @@
 # NAME
 
-ArrayTest - perl CORE::scaler MAY have a bug
+ArrayTest - perl CORE::scaler has strange specifications
 
 # SYNOPSIS
 
-[`perl t/00_compile.t` ](https://github.com/worthmine/ArrayTest/blob/master/t/00_compile.t) will never succeed. Why not?
+`perl t/00_compile.t` will never succeed. Why not?
 
 # DESCRIPTION
 
 I wonder why do these tests fail.
 
-## [diff lib/ArrayTest.pm lib/ArrayTest2.pm](https://github.com/worthmine/ArrayTest/blob/master/diff.txt) is below:
-``` diff.txt
-1c1
-< package ArrayTest;
----
-> package ArrayTest2;
-16c16
-<     my @list = ( $self->zero(), @{ $self->num() } );
----
->     ( $self->zero(), @{ $self->num() } );
-```
+## what's the matter?
+
+`diff lib/ArrayTest.pm lib/ArrayTest2.pm` without POD is below:
+
+    1c1
+    < package ArrayTest;
+    ---
+    > package ArrayTest2;
+    16c16
+    <     my @list = ( $self->zero(), @{ $self->num() } );
+    ---
+    >     ( $self->zero(), @{ $self->num() } );
 
 The joined value with ' ' is same,
-And trying to `note explain`  succeeded, I got 10 references.
+And trying to `note explain` succeeded, I got 10 references.
+
 So there must be 10 references in what these return.
-But CORE::scalar() returns 9 with ArrayTest2.pm!
+But CORE::scalar() returns 9 with ArrayTest2.pm.
+
+It was too strange for me.
+
+## But it's the specifications
+
+According to [perldoc](http://perldoc.perl.org/perlop.html#Comma-Operator),
+
+    Comma Operator
+
+    Binary "," is the comma operator. In scalar context it evaluates its left
+    argument, throws that value away, then evaluates its right argument and\
+    returns that value.
+    This is just like C's comma operator. In list context, it's just the list
+    argument separator, and inserts both its arguments into the list.
+    These arguments are also evaluated from left to right.
+
+namely, `( $self-`zero(), @{ $self->num() } )< and ifever, `return ( $self-`zero(), @{ $self->num() } )> mean below:
+
+    $self->zero();
+    @{ $self->num() };
+
+So they return only `@{ $self-`num() }> **in scalar context**
+
+## how to avoid them
+
+Just use an Array or the Anonymous array like below:
+
+- by using a named Array
+
+        my @return = $self->zero(), @{ $self->num() };
+
+- by using an Anonymous Array
+
+        @{ $self->zero(), @{ $self->num() } };
+
+# SEE ALSO
+
+- [stackoverflow](https://stackoverflow.com/questions/19689393/why-do-i-get-the-last-value-in-a-list-in-scalar-context-in-perl?newreg=b76291905c824a95a0fabaf5a539d0e0)
+- [perlop](http://perldoc.perl.org/perlop.html#Comma-Operator)
 
 # LICENSE
 
@@ -36,4 +77,4 @@ it under the same terms as Perl itself.
 
 # AUTHOR
 
-Yuki Yoshida <worthmine@gmail.com>
+Yuki Yoshida(worthmine) <worthmine@gmail.com>

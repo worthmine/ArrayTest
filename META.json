@@ -1,7 +1,7 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "perl CORE::scaler has strange specifications",
    "author" : [
-      "Yuki Yoshida <worthmine@gmail.com>"
+      "Yuki Yoshida(worthmine) <worthmine@gmail.com>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v3.0.13, CPAN::Meta::Converter version 2.150010",
@@ -52,6 +52,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/worthmine/ArrayTest/issues"
+      },
+      "homepage" : "https://github.com/worthmine/ArrayTest",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/worthmine/ArrayTest.git",
+         "web" : "https://github.com/worthmine/ArrayTest"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:WORTHMINE",
    "x_serialization_backend" : "JSON::PP version 2.93"
